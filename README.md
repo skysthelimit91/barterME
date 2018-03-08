@@ -1,4 +1,4 @@
-# barterME
+# Name of app: barterME
 A bartering app
 
 
