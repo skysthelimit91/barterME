@@ -15,8 +15,8 @@ EDIT/DELETE their post
 A user can message other users
 
 REACH GOALS INCLUDE:
-A user can post comments on an item's page 
-Image uploading with cloudinary 
+-A user can post comments on an item's page 
+-Image uploading with cloudinary 
 
 USER STORIES:
 A user wants to be able to quickly trade an item for another item of value by messaging another user and agreeing on a  satisfactory exchange
