@@ -20,7 +20,8 @@ A user can message other users
 -Image uploading with cloudinary 
 
 ## USER STORIES:
-A user wants to be able to quickly trade an item for another item of value by messaging another user and agreeing on a  satisfactory exchange
+A user wants to be able to quickly trade an item for another item of value by messaging another user and agreeing on a  satisfactory exchange. There will be an 'available items' secetion where a user can see all itms currently available for barter. And each item will have a message button that allows a user to message the person that posted the item. Users will have a messages section where they can see messages they have sent and received. A user wants to be able to change his/her mind about bartering an item and delete or edit their post. 
+
 
 ## TECHNOLOGIES:
 -React
@@ -36,7 +37,7 @@ Friday - set up rails backend With required tables
 Saturday- Create functional login/logout with auth
 Sunday- create Post request that adds an item to items available section
 Monday- create edit and delete functionality for items and messages
-Tuesday- Add image upload and comments
+Tuesday- Hit MVP. Try to add image upload and comments.
 Wednesday - Testing for bugs
 Thursday- Styling and slides
 Friday- Deployment
