@@ -14,6 +14,16 @@ class App extends Component {
   // note that TokenService.save with the token is called
   // may also want to setState with the user data and
   // whether or not the user is logged in
+  constructor(props) {
+    super(props);
+    this.state = {
+      postsData: []
+    };
+    console.log(this.state);
+
+    this.getPosts = this.getPosts.bind(this);
+   
+  }
 
   register(data) {
     axios('http://localhost:3000/users/', {
@@ -66,13 +76,32 @@ class App extends Component {
     .catch(err => console.log(err));
   }
 
-  getPosts(){
+  getPosts(data){
     axios('http://localhost:3000/posts', {
       headers: {
         Authorization: `Bearer ${TokenService.read()}`,
       },
-    }).then(resp => console.log(resp))
-    .catch(err => console.log(err));
+    }).then(response => {
+
+      const stuff = response.data.map(x => {
+        return (
+          <div key={x.id}>
+            <h2>{x.user_id}</h2>
+            <p>
+            {x.description}
+            </p>
+            <img className = "postimg" src={x.image_url}/>
+          </div>
+        );
+      });
+      this.setState({postsData: stuff});
+      console.log("Posts:", this.state.postsData)
+    });
+  }
+
+  componentDidMount() {
+    console.log('app mounted');
+    this.getPosts()
   }
 
 
@@ -81,7 +110,7 @@ class App extends Component {
       <div>
         <div>
           Weird button: <button onClick={this.authClick.bind(this)}>Weird Button</button>
-          Posts button: <button onClick={this.getPosts.bind(this)}>Posts Button</button>
+          Posts button: <button onClick={this.getPosts}>Posts Button</button>
           <p><button onClick={this.checkLogin.bind(this)}>Check If Logged In</button></p>
           <p><button onClick={this.logout.bind(this)}>Logout</button></p>
         </div>
@@ -95,7 +124,7 @@ class App extends Component {
             <Login {...props} submit={this.login.bind(this)} />
           )} />
           <Route exact path="/itemsavailable" component={(props) => (
-          <ItemsAvailable {...props} submit={this.getPosts.bind(this)} />
+          <ItemsAvailable {...props} gather={this.state.postsData} />
           )} />
           </Switch>
         </BrowserRouter>
@@ -103,5 +132,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;

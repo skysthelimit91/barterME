@@ -15,6 +15,7 @@ export default class Home extends Component {
         <Link to="/register"><button>Register</button></Link>
         <br />
         <Link to="/login"><button>Login</button></Link>
+        <Link to="/itemsavailable"><button>Items Page</button></Link> 
       </div>
     )
   }
