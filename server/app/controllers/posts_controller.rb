@@ -15,10 +15,9 @@ class PostsController < ApplicationController
 
 
       if post.save
-      flash[:notice] = 'Post created!'
+      render plain: 'Post created!'
       redirect_to post_path(@post)
     else
-      flash[:error] = post.errors.full_messages.join(', ')
       render :new
     end
 
@@ -30,16 +29,15 @@ class PostsController < ApplicationController
 
   def update
     if post.update(update_params)
-      flash[:notice] = 'Post updated!'
+      render plain: 'Post updated!'
       redirect_to post_path(post)
     else
-      flash[:error] = post.errors.full_messages.join(', ')
       render :edit
     end
   end
 
   def index
-    posts = current_user.posts
+    posts = Post.all
     render json: posts
   end
 
@@ -49,7 +47,7 @@ class PostsController < ApplicationController
   def destroy
     post.destroy!
 
-    flash[:notice] = " Post #{@post.id} has been deleted!"
+    render plain: " Post #{@post.id} has been deleted!"
     redirect_to posts_path
   end
 

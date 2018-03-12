@@ -16,10 +16,9 @@ class MessagesController < ApplicationController
         render: message
 
     if message.save
-      flash[:notice] = 'Message has been saved!'
+      render :plain = 'Message has been saved!'
       redirect_to message_path(message)
     else
-      flash[:error] = message.errors.full_messages.join(', ')
       render :new
     end
   end
@@ -29,10 +28,9 @@ class MessagesController < ApplicationController
 
   def update
     if message.update(update_params)
-      flash[:notice] = 'Message updated!'
+      render :plain = 'Message updated!'
       redirect_to message_path(@message)
     else
-      flash[:error] = message.errors.full_messages.join(', ')
       render :edit
     end
   end
@@ -48,7 +46,7 @@ class MessagesController < ApplicationController
   def destroy
     message.destroy!
 
-    flash[:notice] = "#{@message.id} was deleted!"
+    render :plain = "#{@message.id} was deleted!"
     redirect_to messages_path
   end
 

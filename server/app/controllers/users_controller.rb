@@ -1,40 +1,52 @@
 class UsersController < ApplicationController
+  def index
+    puts 'called'
+    session[:session_token] = 3
+    render json: [1, 2, 3, 4]
+  end
 
-  before_action :ensure_signed_out, only: [:new, :create]
-  before_action :ensure_signed_in, only: [:show, :index]
-
-  def new
-    user = User.new
-    render json: user
+  def gen_token(user_id)
+    payload = {id: user_id}
+    JWT.encode(payload, Rails.application.secrets.secret_key_base) 
   end
 
   def create
-    user = User.new(create_params)
-    render json: user
+    username = params[:username]
+    password = params[:password]
 
-    if user.save
-      sign_in(user)
-      flash[:notice] = 'You are signed in!'
-      redirect_to users_path
+    new_user = User.create({
+      password: password,
+      username: username
+    })
+
+
+    if new_user
+      render json: {token: gen_token(new_user.id)}
     else
-      flash[:error] = user.errors.full_messages.join(', ')
-      render :new
+      render json: {err: 'nope'}
     end
   end
 
   def index
-    users = User.all
-    render json: users
+    @users = User.all
   end
 
-  def show
-    user = User.find(params[:id])
-    render json: user
+  def is_logged_in
+    if current_user
+      render json: current_user
+    else render nothing: true, status: 401
+    end
   end
 
-  private
+  def login
+    username = params[:username]
+    password = params[:password]
 
-  def create_params
-    params.require(:user).permit(:username, :password)
+    user = User.find_from_credentials username, password
+    if user.nil?
+      render json: { err: 'No User' }
+    else 
+      render json: {user: user, token: gen_token(user.id)}
+    end
   end
 end

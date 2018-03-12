@@ -6,7 +6,7 @@ barterME is an app that allows you to post items that you are willing to trade f
 
 ## MVP INCLUDES:
 
-Authentication - you can broswe items available whether or not you are signed in but can post only if you are signed in
+Authentication - you can browse items available whether or not you are signed in but can post only if you are signed in
 A user can post a pic of the item they wish to barter
 A user can see all other user's posted items on the 'items available' page
 
