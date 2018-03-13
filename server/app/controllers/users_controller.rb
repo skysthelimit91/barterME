@@ -28,7 +28,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    users = User.all
+    render json: users
   end
 
   def is_logged_in
@@ -36,6 +37,11 @@ class UsersController < ApplicationController
       render json: current_user
     else render nothing: true, status: 401
     end
+  end
+
+  def current
+    user = current_user.username
+    render json: user
   end
 
   def login

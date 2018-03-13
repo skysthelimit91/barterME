@@ -7,3 +7,7 @@ body {
 .postimg{
   max-height: 300px; max-width: 300px;
 }
+
+.profilepostimg{
+  max-height: 100px; max-width: 100px;
+}

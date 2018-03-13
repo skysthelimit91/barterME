@@ -43,10 +43,16 @@ class PostsController < ApplicationController
   def show
   end
 
+  def myposts
+    posts = current_user.posts
+    render json: posts
+  end
+
+
   def destroy
     post.destroy!
 
-    render plain: " Post #{@post.id} has been deleted!"
+    render plain: "Post #{@post.id} has been deleted!"
     redirect_to posts_path
   end
 
