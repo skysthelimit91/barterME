@@ -27,33 +27,42 @@ handleChange(event) {
     });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    const url = 'http://localhost:3000/posts';
+  handleSubmit(e) {
     const data = {
       post: {
         description: this.state.description,
-        image_url: this.state.image_url
-      }
+      image_url: this.state.image_url
+    }
+      
     };
-
-    fetch(url, {
-      method: 'post',
+    console.log(
+      'you posted this',
+      data
+    );
+    e.preventDefault();
+    axios('http://localhost:3000/posts', {
       headers: {
         'Content-type': 'application/json',
         Authorization: `Bearer ${TokenService.read()}`,
       },
-      body: JSON.stringify(data)
-    })
-      .then(response => response.json())
-      .then(data => console.log('Successfully created new post!', data));
+      method: 'POST',
+      data
+    }).then(response => {
+      console.log('POST successful, response.data:', response.data);
+    });
   }
+
+
+  // componentDidMount() {
+  //   this.props.refresh()
+  // }
+
 
 
 render() {
     return (
       <div className="make-posts-form-div">
-        <form onSubmit={this.submitHandler}>
+        <form onSubmit={this.handleSubmit}>
           <br />
           <label>{'Write a description of your item here'}</label>
           <br />
@@ -61,17 +70,18 @@ render() {
             className="post-description-text-area"
             type="text"
             name="description"
-            onChange={this.changeHandler}
+            onChange={this.handleChange}
           />
           <br />
           <label>{'Enter image address for your post picture here'}</label>
           <br />
+          <input type= "file"  />
           <br />
           <input
             className="post-input"
             type="text"
             name="image_url"
-            onChange={this.changeHandler}
+            onChange={this.handleChange}
           />
           <br />
           <input className="edit-button-submit" type="submit" value="submit" />

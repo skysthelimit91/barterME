@@ -124,7 +124,7 @@ class App extends Component {
             <Login {...props} submit={this.login.bind(this)} />
           )} />
           <Route exact path="/itemsavailable" component={(props) => (
-          <ItemsAvailable {...props} gather={this.state.postsData} />
+          <ItemsAvailable {...props} gather={this.state.postsData}/>
           )} />
           </Switch>
         </BrowserRouter>
