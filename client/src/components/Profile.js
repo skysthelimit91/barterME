@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import EditProfile from "./EditProfile";
+import EditPost from "./EditPost";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import 'moment-timezone';
+import TokenService from '../services/TokenService';
+
 
 
 export default class Profile extends Component {
@@ -13,9 +16,12 @@ export default class Profile extends Component {
   
 
     this.state = {
-      editing: false
+      editing: false,
+      editingPost: false
     };
     this.editProfile = this.editProfile.bind(this);
+    this.deletePost = this.deletePost.bind(this);
+    this.editPost = this.editPost.bind(this);
 
   }
 
@@ -26,6 +32,30 @@ editProfile() {
     });
   }
 
+  editPost() {
+    this.setState(prevState => {
+      const nextState = { ...prevState, editingPost: !prevState.editingPost };
+      return nextState;
+    });
+  }
+
+
+deletePost(e){
+    e.preventDefault();
+    const correctid = e.target.getAttribute('data-post');
+    axios({
+      url: `http://localhost:3000/posts/${correctid}`,
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${TokenService.read()}`,
+      },
+      method: 'Delete'
+    }).then(response => {
+      console.log('Delete successful');
+    });
+
+
+}
 
 render() {
     let checkEditProfile = null;
@@ -34,6 +64,16 @@ render() {
         <EditProfile
           image={this.props.image}
           id={this.props.id}
+        />
+      );
+    }
+    let checkEditPost = null;
+    if (this.state.editingPost) {
+      checkEditPost = (
+        <EditPost
+          image={this.props.selectedUsersData.image_url}
+          id={document.getElementById('postedit').getAttribute('data-post-edit')}
+          description={this.props.selectedUsersData.description}
         />
       );
     }
@@ -46,6 +86,9 @@ render() {
             {x.description}
             </p>
             <img className = "profilepostimg" src={x.image_url}/>
+            <button onClick={this.deletePost} data-post={x.id}>Delete Post</button>
+            <button id="postedit" onClick={this.editPost} data-post-edit={x.id}>Edit Post</button>
+            {checkEditPost}
           </div>
         );
       })
@@ -54,9 +97,9 @@ render() {
     return (
       <div>
         <img className= "profpageimg" src= {this.props.image} />
-        <h1>{this.props.current_user}, you can edit your avatar or posts below </h1>
+        <h3>{this.props.current_user}</h3>
         <button className="edit-profile-button" onClick={this.editProfile}>
-              Edit Profile
+              Edit avatar
             </button>
             {checkEditProfile}
         <br/>
