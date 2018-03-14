@@ -205,6 +205,7 @@ class App extends Component {
 
     // whatever
     }).then(response => {
+      if(response.data){
       const current_user = response.data.username
       const image = response.data.image_url
       const id = response.data.id
@@ -213,6 +214,7 @@ class App extends Component {
         image_url: image,
         id: id
       });
+    }
     })
   }
 

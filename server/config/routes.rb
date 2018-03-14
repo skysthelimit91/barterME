@@ -9,8 +9,11 @@ Rails.application.routes.draw do
 
 
   resources :bottles
-  resources :messages
   resources :posts
+  
+  resources :conversations do
+  resources :messages
+ end
 
 
 

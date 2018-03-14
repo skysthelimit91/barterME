@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import PostForm from "./PostForm";
+import MessageForm from "./MessageForm";
+
 import Moment from 'react-moment';
 import 'moment-timezone';
 
@@ -9,15 +11,24 @@ export default class ItemsAvailable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      posting: false
+      posting: false,
+      messaging: false
     };
     this.makePost = this.makePost.bind(this);
     this.renderPost = this.renderPost.bind(this);
+    this.makeMessage = this.makeMessage.bind(this);
   }
 
   makePost() {
     this.setState(prevState => {
       const nextState = { ...prevState, posting: !prevState.posting };
+      return nextState;
+    });
+  }
+
+  makeMessage(){
+    this.setState(prevState => {
+      const nextState = { ...prevState, messaging: !prevState.messaging };
       return nextState;
     });
   }
@@ -32,12 +43,22 @@ export default class ItemsAvailable extends Component {
       return <p>LOADING</p>;
     }
 
+    let checkMakeMessage = null;
+    if (this.state.messaging) {
+      checkMakeMessage = <MessageForm userData={this.props.usersData}
+      id={document.getElementById('messageme').getAttribute('data-user-id')}
+       />;
+    }
+
     return (
       <div key={postData.id}>
         <img className = "profileavy" src={userData.image_url} />
         <h2>{userData.username}</h2>
         <p>{postData.description}</p>
         <img className="postimg" src={postData.image_url} />
+        <br/>
+        <button id="messageme" data-user-id={userData.id} onClick={this.makeMessage}>Click here to message {userData.username} about this post</button>
+        {checkMakeMessage}
       </div>
     );
   }
@@ -45,7 +66,8 @@ export default class ItemsAvailable extends Component {
   render() {
     let checkMakePost = null;
     if (this.state.posting) {
-      checkMakePost = <PostForm />;
+      checkMakePost = <PostForm gather={this.props.gather}
+       />;
     }
 
     let postsItems = null;
@@ -63,6 +85,9 @@ export default class ItemsAvailable extends Component {
         <br />
         {/*this.props.gather*/}
         {postsItems}
+        <br/>
+
+
         <Link to="/">
           <button>Back Home</button>
         </Link>

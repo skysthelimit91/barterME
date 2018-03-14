@@ -47,10 +47,12 @@ handleChange(event) {
         Authorization: `Bearer ${TokenService.read()}`,
       },
       method: 'POST',
-      data
+      data,
+
     }).then(response => {
       console.log('POST successful, response.data:', response.data);
     });
+
   }
 
 
@@ -73,6 +75,7 @@ render() {
             type="text"
             name="description"
             onChange={this.handleChange}
+            
           />
           <br />
           <label>{'Enter image address for your post picture here'}</label>

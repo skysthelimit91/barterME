@@ -1,67 +1,35 @@
 class MessagesController < ApplicationController
-
-  before_action :ensure_signed_in
-  before_action :load_message, only: [:show, :edit, :update, :destroy]
-
-  def new
-    message = Message.new
-    render json: message
+  before_action do
+   @conversation = Conversation.find(params[:conversation_id])
   end
-
-  def create
-
-    message = Message.new(create_params)
-    message.user_id = current_user.id
-
-        render: message
-
-    if message.save
-      render :plain = 'Message has been saved!'
-      redirect_to message_path(message)
-    else
-      render :new
-    end
+def index
+ @messages = @conversation.messages
+  if @messages.length > 5
+   @over_ten = true
+   @messages = @messages[-5..-1]
   end
-
-  def edit
+  if params[:m]
+   @over_ten = false
+   @messages = @conversation.messages
   end
-
-  def update
-    if message.update(update_params)
-      render :plain = 'Message updated!'
-      redirect_to message_path(@message)
-    else
-      render :edit
-    end
+ if @messages.last
+  if @messages.last.user_id != current_user.id
+   @messages.last.read = true;
   end
-
-  def index
-    messages = current_user.messages
-    render json: messages
-  end
-
-  def show
-  end
-
-  def destroy
-    message.destroy!
-
-    render :plain = "#{@message.id} was deleted!"
-    redirect_to messages_path
-  end
-
-  private
-
-  def create_params
-    params.require(:message).permit(:description)
-  end
-
-  def update_params
-    params.require(:message).permit(:description)
-  end
-
-  def load_message
-    message = current_user.messages.find(params[:id])
-    render json: message
-  end
+ end
+@message = @conversation.messages.new
+ end
+def new
+ @message = @conversation.messages.new
+end
+def create
+ @message = @conversation.messages.new(message_params)
+ if @message.save
+  redirect_to conversation_messages_path(@conversation)
+ end
+end
+private
+ def message_params
+  params.require(:message).permit(:description, :user_id)
+ end
 end

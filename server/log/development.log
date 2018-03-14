@@ -42032,3 +42032,1995 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 3.2ms)
 
 
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:03:41 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:03:41 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:03:41 -0400
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (26.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (28.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (31.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 154ms (Views: 7.7ms | ActiveRecord: 26.9ms)
+
+
+  [1m[36mPost Load (6.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 198ms (Views: 4.9ms | ActiveRecord: 37.7ms)
+
+
+  [1m[36mPost Load (54.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 212ms (Views: 4.8ms | ActiveRecord: 83.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:03:41 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/isLoggedIn" for 127.0.0.1 at 2018-03-14 09:03:43 -0400
+Processing by UsersController#is_logged_in as HTML
+  [1m[36mUser Load (6.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:04:41 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:04:41 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:04:41 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 2.5ms)
+
+
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:04:41 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-03-14 09:04:50 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"description"=>"hgvhgvhgv ", "image_url"=>"b b k b bh"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (23.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.1ms)[0m  [1m[32mINSERT INTO "posts" ("description", "image_url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "hgvhgvhgv "], ["image_url", "b b k b bh"], ["user_id", 2], ["created_at", "2018-03-14 13:04:50.569499"], ["updated_at", "2018-03-14 13:04:50.569499"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 40ms (Views: 0.3ms | ActiveRecord: 29.4ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:04:55 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:04:55 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:04:55 -0400
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 1.0ms)
+
+
+Processing by UsersController#current as HTML
+Processing by PostsController#myposts as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:04:56 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:11:06 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:11:06 -0400
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:11:06 -0400
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 8ms (Views: 1.6ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 2.5ms)
+
+
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 10ms (Views: 3.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:11:06 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:12:03 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:12:03 -0400
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:12:03 -0400
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 9ms (Views: 2.4ms | ActiveRecord: 2.4ms)
+
+
+Processing by UsersController#current as HTML
+  [1m[36mPost Load (2.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 11ms (Views: 5.7ms | ActiveRecord: 3.7ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:12:03 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (14.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 17ms (Views: 2.1ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:16:24 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:16:24 -0400
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:16:24 -0400
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 10ms (Views: 1.8ms | ActiveRecord: 2.7ms)
+
+
+  [1m[36mPost Load (3.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 15ms (Views: 1.9ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:16:24 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:16:46 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:16:46 -0400
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:16:46 -0400
+Processing by PostsController#index as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 8ms (Views: 3.1ms | ActiveRecord: 2.0ms)
+
+
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:16:46 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:17:05 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:17:05 -0400
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:17:05 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 1.6ms)
+
+
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:17:05 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-03-14 09:17:14 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"description"=>"md lSD L SDFLv", "image_url"=>"vdfv lf vldf"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.4ms)[0m  [1m[32mINSERT INTO "posts" ("description", "image_url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "md lSD L SDFLv"], ["image_url", "vdfv lf vldf"], ["user_id", 2], ["created_at", "2018-03-14 13:17:14.169297"], ["updated_at", "2018-03-14 13:17:14.169297"]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 17ms (Views: 0.3ms | ActiveRecord: 12.4ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:18:04 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:18:04 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:18:04 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 1.0ms)
+
+
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mPost Load (5.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 12ms (Views: 2.2ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:18:04 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-03-14 09:18:13 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"description"=>"LL", "image_url"=>"TT"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("description", "image_url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "LL"], ["image_url", "TT"], ["user_id", 2], ["created_at", "2018-03-14 13:18:13.514411"], ["updated_at", "2018-03-14 13:18:13.514411"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 10ms (Views: 0.3ms | ActiveRecord: 7.2ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:18:17 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:18:17 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:18:17 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 2.3ms)
+
+
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:18:17 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:18:28 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:18:28 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:18:28 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 2.5ms)
+
+
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:18:28 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/posts/6" for 127.0.0.1 at 2018-03-14 09:18:32 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 6ms (ActiveRecord: 2.6ms)
+
+
+Started DELETE "/posts/5" for 127.0.0.1 at 2018-03-14 09:18:34 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 5]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 5ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:18:36 -0400
+Processing by PostsController#myposts as HTML
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:18:36 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:18:36 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:18:36 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:19:48 -0400
+Processing by PostsController#index as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:19:48 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:19:48 -0400
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 1.5ms)
+
+
+Processing by PostsController#myposts as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:19:48 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:21:15 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:21:15 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:21:15 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+
+
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 1.8ms)
+
+
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:21:15 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:23:55 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:23:55 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:23:55 -0400
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+Processing by PostsController#myposts as HTML
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:23:55 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-03-14 09:24:06 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"description"=>"we", "image_url"=>"wsee"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.2ms)[0m  [1m[32mINSERT INTO "posts" ("description", "image_url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "we"], ["image_url", "wsee"], ["user_id", 2], ["created_at", "2018-03-14 13:24:06.329221"], ["updated_at", "2018-03-14 13:24:06.329221"]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 15ms (Views: 0.2ms | ActiveRecord: 11.1ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:24:14 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:24:14 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:24:14 -0400
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Processing by PostsController#myposts as HTML
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Processing by UsersController#current as HTML
+Completed 200 OK in 7ms (Views: 3.2ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 10ms (Views: 2.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:24:14 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:24:53 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:24:53 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:24:53 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 2.0ms)
+
+
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:24:53 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/posts/7" for 127.0.0.1 at 2018-03-14 09:24:57 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 7]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 5ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:24:59 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:24:59 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:24:59 -0400
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 14ms (Views: 2.2ms | ActiveRecord: 2.5ms)
+
+
+Completed 200 OK in 14ms (Views: 3.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:24:59 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:37:53 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:37:53 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:37:53 -0400
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Processing by UsersController#current as HTML
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 1.4ms)
+
+
+Processing by PostsController#myposts as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:37:53 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/posts/4" for 127.0.0.1 at 2018-03-14 09:39:12 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."user_id" = $1 AND "posts"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 4]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 5ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:39:13 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:39:13 -0400
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.2ms)
+
+
+Processing by UsersController#current as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:39:13 -0400
+Processing by PostsController#myposts as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:39:13 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:39:30 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:39:30 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:39:30 -0400
+Processing by UsersController#current as HTML
+Processing by PostsController#myposts as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Processing by PostsController#index as HTML
+Filter chain halted as :ensure_signed_in rendered or redirected
+Filter chain halted as :ensure_signed_in rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:39:37 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:39:37 -0400
+Filter chain halted as :ensure_signed_in rendered or redirected
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:39:37 -0400
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+Filter chain halted as :ensure_signed_in rendered or redirected
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:40:01 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:40:01 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:40:01 -0400
+Processing by PostsController#index as HTML
+Processing by UsersController#current as HTML
+Filter chain halted as :ensure_signed_in rendered or redirected
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Processing by PostsController#myposts as HTML
+Filter chain halted as :ensure_signed_in rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/isLoggedIn" for 127.0.0.1 at 2018-03-14 09:40:13 -0400
+Processing by UsersController#is_logged_in as HTML
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/isLoggedIn" for 127.0.0.1 at 2018-03-14 09:40:13 -0400
+Processing by UsersController#is_logged_in as HTML
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/" for 127.0.0.1 at 2018-03-14 09:40:43 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"Jeremy", "password"=>"[FILTERED]", "user"=>{"username"=>"Jeremy"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (20.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Jeremy"], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Jeremy"], ["password_digest", "$2a$10$5bBLT/Cf2uxKQHQnygMV4uI0pAA1wDlev8JWZ8Bg4sEuVupGNuxPO"], ["created_at", "2018-03-14 13:40:44.019555"], ["updated_at", "2018-03-14 13:40:44.019555"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 108ms (Views: 0.3ms | ActiveRecord: 27.8ms)
+
+
+Started GET "/isLoggedIn" for 127.0.0.1 at 2018-03-14 09:40:48 -0400
+Processing by UsersController#is_logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:44:10 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:44:10 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:44:10 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#current as HTML
+Processing by PostsController#myposts as HTML
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 21ms (Views: 0.6ms | ActiveRecord: 3.4ms)
+
+
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 39ms (Views: 5.8ms | ActiveRecord: 4.7ms)
+
+
+Completed 200 OK in 44ms (Views: 6.6ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:44:10 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:44:24 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:44:24 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:44:24 -0400
+Processing by UsersController#current as HTML
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Filter chain halted as :ensure_signed_in rendered or redirected
+Filter chain halted as :ensure_signed_in rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:46:32 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:46:32 -0400
+Processing by PostsController#index as HTML
+Filter chain halted as :ensure_signed_in rendered or redirected
+Processing by PostsController#myposts as HTML
+Filter chain halted as :ensure_signed_in rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:46:32 -0400
+Processing by UsersController#current as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:46:59 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:46:59 -0400
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:46:59 -0400
+Filter chain halted as :ensure_signed_in rendered or redirected
+Processing by PostsController#index as HTML
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Filter chain halted as :ensure_signed_in rendered or redirected
+Processing by UsersController#current as HTML
+Completed 401 Unauthorized in 2ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:48:26 -0400
+Processing by PostsController#index as HTML
+Filter chain halted as :ensure_signed_in rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:48:26 -0400
+Processing by PostsController#myposts as HTML
+Filter chain halted as :ensure_signed_in rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:48:26 -0400
+Processing by UsersController#current as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:49:24 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:49:24 -0400
+Processing by PostsController#index as HTML
+Filter chain halted as :ensure_signed_in rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:49:24 -0400
+Filter chain halted as :ensure_signed_in rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Processing by UsersController#current as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:49:29 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:49:29 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:49:29 -0400
+Processing by PostsController#index as HTML
+Filter chain halted as :ensure_signed_in rendered or redirected
+Processing by UsersController#current as HTML
+Processing by PostsController#myposts as HTML
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Filter chain halted as :ensure_signed_in rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:49:40 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:49:40 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:49:40 -0400
+Processing by PostsController#index as HTML
+Filter chain halted as :ensure_signed_in rendered or redirected
+Processing by UsersController#current as HTML
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Processing by PostsController#myposts as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Filter chain halted as :ensure_signed_in rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2018-03-14 09:50:06 -0400
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"Jeremy", "password"=>"[FILTERED]", "user"=>{"username"=>"Jeremy"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Jeremy"], ["LIMIT", 1]]
+Completed 200 OK in 69ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/isLoggedIn" for 127.0.0.1 at 2018-03-14 09:50:10 -0400
+Processing by UsersController#is_logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:50:20 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:50:20 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:50:20 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 2.1ms)
+
+
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:50:20 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-03-14 09:51:51 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"description"=>"Getting rid of my lawn mower. Still works very well. ", "image_url"=>"https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/MTD_Lawn_Mower.jpg/1200px-MTD_Lawn_Mower.jpg"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("description", "image_url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Getting rid of my lawn mower. Still works very well. "], ["image_url", "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/MTD_Lawn_Mower.jpg/1200px-MTD_Lawn_Mower.jpg"], ["user_id", 3], ["created_at", "2018-03-14 13:51:51.336653"], ["updated_at", "2018-03-14 13:51:51.336653"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 14ms (Views: 0.2ms | ActiveRecord: 7.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:51:53 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:51:53 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:51:53 -0400
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 2.5ms)
+
+
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:51:54 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/users/3" for 127.0.0.1 at 2018-03-14 09:53:17 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"image_url"=>"data:image/png;base64,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", "id"=>"3", "user"=>{"image_url"=>"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOAAAADhCAMAAADmr0l2AAABAlBMVEX///8AAADOEUHUEUPREULVEkPy8vJ5eXksLCzu7u74+PjHx8fOzs6ysrK6urrp6enU1NTe3t6NjY2hoaGUlJTExMS4uLjHED9UVFTa2trBED26DzupqamnDjWvDjdyCSSICytqampBQUEfHx+Ojo6VDC80NDRjCB9IBhd8fHyZDTCJCytTBxpISEh6enp+CigtBA5gYGA0BBAwMDBlZWVsCSIZAggmAwwjIyMXFxcUAQZYWFhCBhUwAAAjAwtaBxxRAA6nACZBAAA2QT8AFRNTAABuABgmMjAQHx1WAA8ACQh1ABJjAAhFAABpABdGU1IXLis2AABgAAByAACMAB0FKCU6r/roAAAcSklEQVR4nO19d3/iOLt2ZFsQeo8JYFMSQs2QkJDKhH2m7ubszOy+z77f/6scSbbVLBcIJOR39vpnJi6yLpW76ZY4OPCQHR2Cu24ufbB9pHPX98+9UfZlpRRHZ+AwsoJBtzN3wEUFFXV/eHhSdW4UTg45nOD3a/f8pTPnueQd/1iFL7vqFX1XPDgoo+fuj/nbI/5Ngru6v4LZK6+UqlPBu7L8SKl6ju+fdI/8r3cBQz1ziP9JugUDASl0qSVecp47F65xHy+ccNerOfJPhv92Hfhw76vgB+5uL3OG/+mKTxzzNahKr5/5v+ERLL6QoPQ+2Izguf8ZiWBSulvkb/ZUldgOwZKq6LUJqvgJBNOHvtutYPLbJKgsel2CZWUhHMH0veI+lQNZxU0QNAfTQQTFUTAKbTuRoKp7BH7H6kI4gv7+w8i7d6+Udz2CB8UibcA7r8ACK6ToSsR0iV08yqaci+oBKhEsHuUf+Zu9VCklEFTOIJ5gl71by47YE04xGXbhHn047fVPkr5PO/HEu5Kir/AVoRcT/i+DyxLi6/0tEDyQhZx0k58kNVzhM4kgG2QfxD/Pye1L9nqab3ZGkDaBgiCvV6WWQ43Fir52rlSUBFnfE+TFu1wruQUnRYJUhfecv9kUqgnVAp5+zG2L4JHcdp5EkQgS2nVqD0gKjhVCBaOgB2v0fsm9QicdNkI4ISIWuQWCTMR88J4pqgiSSdZiskS4yY1QsUYeQSqkHr3befpGkQ4aoeHKWyLIbJia+JBIMOW+RJ8WbrMKPrKL4P7EU0WsLmxo00sjvpWZZsxshyA3BZlYTPoJkjmDRhOVf0n+LqugbH85yCnqQuXKPa9m2VcT4P6eK44SfGYPxCHIyQ720BEuWzC2nTFW4eW5767UQzy63u0rdo31eoqJIDpFfWAf7n5IYoxYq4QRZLPnRFmuiwT9On2eNyRZBdXuFlXynGzKcO+wVi5EE/QjjCB77yyMIBljxIago5H3hJgVpu4BepsbwczAyHEEU8r3t0KwF0aQmDGn+H9U4PO2KPuW2wNpCvIXvc35oAnuIns/cRCAlxM8D+Hn1PBYLIGbpKwHCUHeKKgLXFpymRhVTpRvfYgyFRvWg47Scv5/zepFIQkJ3rw9i0PwXHw/nOD1iKDMXgojyOpypyzXQVfVbtwLzNQuygR7wle5Icq6ucWVHxgT8otvZnTE1IMhBFX8+OHEKliTCV4K749Ymax+eRYR4rq4UBWGq58g+0qoJcOqwuZ3LSfyY5akANYdVfEaT5BQoiqLi1QxI7jE2W3MfkCmWp0ZV5sTZG5ehn9oxE+GAJeYKRbWAqTD0lWEQ44xawBWaJm7xqwuydiWTNtNCDKDgio2R/CMpJfOHusOer4yOCnCatR1/s6yEjGY6KWC6fFAZSm0tkWQG07eM+cSwaz4KSbz2IRh3jAdVff8x/2tyGQMng+si8+FJmOWz8YEOR3k1jcn1dQxsDkjizqrTHWyceCN25rwyKmveiPhCjdGifZJuF3Kps3mBFndHCVUk8px3+HmOxuQVC5xwtjpI29Q5uRXXO2Zkp7npvllLeO1xzP7KBvlfoIcP0VMhtcB1Uze0+PM1Dz2FULHKJO2XBjpsZbJUdHl3WcixZmFbCKnpRbg4cUv0tUKtS9AtYo7Il9lbTKqugI9V61yF73aSRFG4btodlQcOpWq6z6UqhVau8NK1a9PeTBNwq4hj6rArBCvFjnF29S4kgK/eC49ipcOpGbDoFJeFfLz5AdnVrpSpyI+WAupIG/s8IFTLkR6SR/o+l+no0xB8Fq8JA0tAto+iuFBFXJsgkplydsiR4r7go92Kd9kKuWFBOWQIP/d+AT9FZQMS0Ufiz7oSLzJmRovJXiQEuPqnEG1BkHf8oQY9FCsP3TlB7hVvOt08Jstf3M6zwXMQYwqd4NfGV2H4EH2jruR9K/jpoU+updj5wg1V3Z8EN2mQlIAFnc54Yor8yvCxZZQRrrqhGKvKkLF0ux5tz5F8WOih+pV8Kqqjj2kql4bPNaUDyApnS0Ger0vROI4exwYMoiNUjFbClujT2WPcnl59P6Lf/Ev/sW/+D+BUjEwsPkCFPwQFVFeAL6SZn+6CreQ5eFTZMfCbXU9so751CVKrlKpbkvZKfOU7jg7RcqjwHYCHwh3bA7xmYr0DckcVxhZBwm2nNV1DLrTLREMyKFhtryUw6Im+BxKUGojBUGhCZ4JWfVi6PYIUmf5NQiqQg47J+jV4zUIqlKhdk/QDawoCPLB+DhzMIqgMrjvEXypAS8ImWp1dC5/olC/pA7tqEqupapVx7E5u6w7rcC5vCeXddmX4eKW+BWfLmDfvGdDwSPYkp+OBU6Qp9N08eKQ/F0W/sSgARHWms4lrkQ6jdTSj47qov8ei6nVsAq6Egnm5PEQi5/wEh0hLiPqdXvNQOMhzA/NCQ/wtfTlIRPQgaIgSO+5geyyQLAYtjIXhLJAUOzBAzajPN84DkHag2qCdKorCNIG9qI5ZZ5gaQNxkwDCwPYR9EIy6/TgNgjS8u44gqnQxVU1khEEPatCZLMzgnJ2pFO6RzDtl8pRKIAIgu6fNC63Y4KcGdNzxVitVvPmRxo8rNuFXfA1dA564Tlqre2YoKBFc/67fbCeqiiAxf+oCT6nD9KFvBf/ZIH/XRMUYr6Hsh0AxrP1ujAJGn+qCQrglj52TVAyRc9Eh+rLRAOKnS6BSIApDBiiPPjMnl0T9K3BCVH5LzO4+L4GwVNgxSAoJHTunKC8cgJOOAsUEWwGp/j4AZ4g/BHdg3zq5u4JymsWWBwwgjr8+1H9mgJHYKLDH4JxoJ6DXCLIKxA8KEkuE1ujQgSNcXCenYweMDX4Q7CIGcHjbL5KF5HYRHgNgsgeF5evqDBFBDUjdgSjAFZQg19H/DVK8EqsC9U+r0MQUeQXGmkXAkQQLuJqCiRiDE3/Q5AhsqKnlXltguI6rlc46KAetEHQgpmEZ2Bomv5TkMM+U81bhfPlMKxDkPxBayUTdHxgd2JVk0nqv7PsWFdwpkEfVRlydkcYimChI4LfhKcDvQmvnzcnSBW0TNCJYri+fQ+oksOOvILHuE/aIGzZkKIMbPz07HMoQU+gedPgSKrdgaeat0iQSgUqanLek5ggGqN+K1WBewA1RHDyVxhB6px73gutHZNNjkfFFfJSgnQ004SSI+9N3CdojMZRhSUwwASRWuGvyiELGmSmA5kOGy+e7oRY+Dxm2iqn/DuUoByy8BP0eqguPZkDTUxQH8QZoxXS3ZphcQTTnOjKHZeyXMYENQdYWkmNbxJOFqdp5Mzr5YAezAQSBGet40KRbcZ236wCTXPqrN4XI6COtDx+uMnERcDuUr4NhYfOqhVqCzDJze8xPTzDOOEJ8oVekdv3CoIiPEHfJbMKQbSP1QBL52GTpdmEBH65rULKtGQuXTGoCIegOhkwgqBnm13dOnWG02hdX8RGAepATWfdHUKQt+BVm4S5IfOsuP0ygnR6gCERG5rRj7ZHK0ggweWtZsCPUTu0gRTBVWzz5o2FrROkhR9jza1rY2g0ohXFJdDgAICHBmSmTCBBORoppViKlsXLCV4K2XbM3muBCdQnAAxN+BQ5CcEczsARUntm//cIgo/+Bda80IliKC+IgSOGAvJd6Ty7IiqX5aIdcgbrNbDHN8jmAMBuR/n1KTAbu9sULaZUEn6UimqVkxm5HM9b8gOKUjDcu2n1Xa+QVMlJ30pU8DBJClEnABC9bgJ3xDxKE2bAwBl4JfCgXEeOgXShVFJnyu0G2KI4Ix2arodsvnJQoWM79QxG4c/uC7rgkArrSlRwLclUZWKDgP9bICEY9FHLMD1uF2MxjuHz9igLQe2zCDEqNMDlYeBz+4OEuLP0MWyfKYKgKGvvoQuvxV25o6ugBwkKouS83/9ZmJdsl2p4lY/FRPasL21931DyTjjxUAknmJXUyGjNVanXRgHIYiKCYEa2xs/ihuLeBFlwLxsuEUPURxB5CLECOW+CU3DmM8zK4QSLPksnfbivBk3tROW/d8M2s+M56/cQHsHhHm5COLpS51z2wvVgQfVSC4DrDdJs04nCcbF2lGtVy6MP3ctfvz5//vz9r9//+v4d/efXr8fLbnI0Kp9WK63cUT6TLR6XColYgduDRK0LQID4i4rKKGdcOom8nxgnVqZTx9l8q1LuXn7+3XNvb24//vj6589v3yaTfn/soN/vTyaTb99+/vzz69dPH2+fHngH8Mvv3z//uu5+KCPqR5nsMUc7nSjVKkkcq+oGyL5CVD5JwLpICucA9KoZ2QtCnhHqpMrp6PrXX7hyD39/+vrnt2//jMd2s9nQoA4xdAJDgO4CQu8RzWw2m7aF+E9m337+EeQAo+FUCV6dyUf5eL3A2HC2THZ6n/SuyZap63MaYzrp1cG3pmlqtK4OB21d8OThDCB3N1UoHRezmTwa6C00kmvZ4whHMxnl8I5CpWyp1jodjfDUQeMHfa/oOrY1oK1PJ4JsM2IVTY3wU3kOcBB8k51nj7/BLfPDCw0bpJxnI7PyCpvYZmkn2r9d6IvP0V+W0Y3un/sIf0qFI7B1emShYe2ThhPhxyoRlINPdQrE5Y/tj1CE9c3gcoxXNsktJQvIWwf8qFZZwUiEHjrk4WptJzcDGrsgqH9bdxJexwp05tfOLR3d7GSESkuw0cjEWuDFp6OsSfBLW98FQa2hsPxDkA45M01ALc4qIocCTqvZBfT1VFYvtlB6XC9mn9uFksCAP9Zp6W58wyB2X7slf9zJFMR5L2ukgI7WiY9lQXhwUcTzWlNQjz+cjX58VZ+Uo2vhaIWeQyiisJadprft2E8bdtRSEUV9TblxUAG9uI2XX0sLQicFIB7MmHnYx+tvm8BhipitVwbrTMG1CMZ0KMpR+YlKZOK2yvlarpKaYIB7DD/GmFhH/lNj4iHVA704vmFAlxga9u19FZcIYu8dQqNhTZoKhnAVubyVuQInG/8GSQWAUeRMDJAx+gN4GA5mfatpGnwcA4IONLxYjNGwrU57+oTjHipRrLcjjKraWVBwLR5wNK0coRJrQNX2SAK2pzRWdjGcLtqzSX88tppggINK7cV0eOHdHrb7tqYaBvokzHdLVHyJHOujgCh2Q2dwNcCOMZyh158Nhrfq4NjDxXTRQT2MujcgQIXM7aBvp/FvG/S2sXyZwJmF5WCO3TAhajhzDEcEbQv1XGc2A8POpG/ZTRKD04OoecNAvTBSaOF8yvLWznyo4UzJbktt2l8NYwlRLx5I5mDcmKLR9Hvfxy0c1b4PafLNOJL0nsNu9agoHadEErzjYy09qGmcBkgVj6pdkgp/2drJmVOpWpkm2j7f9c7rj/Xz3tlJUIUDBl8QQfXTBjjMVaqj7iM9XbTb2sVhJAzpUq1VTXbr9R49gU0djzGR+NAUk8zwESQD17AtZXNQSYtXDioB2WPbRyFTSZKliPl00A7QEmThZbjojO2GBl15guHNQcPVhWbT6gzmQQ2F5RMSUONJe7AE/78bsiixJaSzDrUf35AKx5pAD3B/jGa/PaSNPx8OiB60bBu0vQUWpAuXN+79QccOnpqueNI1+5///t0b5Xd16lsqP/oOwMefSCsT1RUuCA1MX0Pds1hdCKtjPIgmtM3gdlKU2fjPf4fXlW0vyaaOkl8A+KPfNAK1clCV8EAkerDf77TbCzBvtzv9uJpQWSaasv/579+/WlvLaMyWfwfg59hcj5vM1BlnJhh403HTolyS2j9fe62XnyN4kEHG2o9+AwaPobUq23C2naiK8XHAUzykZETyP/+v/jKdWEC+5E/LgCEMdG08Hjf9NdF11fgzGnhvonjJGcaaKI11w5oNpqu2FTo5Mcevnyubcqz9An/aoY2I5PjMEReLplhvfQ7mq/YEKwmdX/XFBHktoZk2NsixnuAUJGwsqEmuVEMcR2j8c3NVWX8+pitfPtmRws3jh7AyBU+2P6VK+mm4Wsw6YwsJloYNpljgWGOkJlZTKl9vloOZyfqlzYvayPGvw5sNYhYt0IaRRSNrmEOH70Tk5uom1tCr4U2QlkA+sdPLZDjT+jZF/yoyaKcvN0r7TIJxpJ8gNjVYmvKUM7yBiHut3+l0kPIfIOcX9afdMKFKT0BLaoWIsKuhDzc8X60HrCiGcCn1SGAE0VMTAwBsd0YGFDmRuzmcoGHO142JekjfR/YhXMm1aYY3N5ot4f6Sn19wo5HnraAtz3EYnkXNQ10eThEMyZxdhrQa7EjFIdtJtwMroWsD8KJ8zyS4aAZWx4ANG5rWQKpSiNWs6UToxuVXPwNzpFNMcNs3VBx1Az1ef5kxk0EazlQVjlSs/QcAuqbb4LxQicnQIA8EikVO6QA88q7BQNdgGxmKYGEZgkY2DGiip+9fnq5bRWJP0vbEpp/cgMvS9zFW3ZfS7q1A2aQ7EywoiiPyAxUk5pCTiBcoKjhgMu3YrtzF3+9PEb2t5OqmcVitbZle2hwOQ6O++1xBY+P0E0S90pPPzuwHMfT6WB3NWIil5A+eAZqBzlE/JXfPLPIsF4sB8TS7L/xVbQ7ZEfKVwNOn3377RHTw91HeGfnH+FQPvK1UmoczJUMqc+eq27oskQsJcAM1yAJrxdaHnpOl+Vw/3XDjWCBStcro+vHxclTN81EfNIaMPsj4DrNZKWw82Ke32z6GhiapVHB/kEcq0LDk4Haq8Jo728p/4zH6KBy9SHDbkDkIKqUj3YW2XADquDpoGPC3+Mfg7AIlgLyFDsgqfuqhowvSVLLAFlwXG1Br+14H6RKYIhvvrbc1fO8gTfEEEgqGN0x7GbokIdGMHpPoB5bITQU91GZnqANR470tP+R0QOzFPqcOEvI8RBhYRLATpeLHdNbv92crVUjqpISMjAlqu83tsC0hjWU+tsCwSirUjrpyVR/my7mCQSjqR3g3+AJq65zTtCsk/4DYpF+CkwoWr8qf1uHht14lZBLY2wZggsqFtxtkr24ZJZJkYcAxceDPoqpv+90FCeXqCJWyauBDe8ZvLWIwPjtJCAZszmRVpug/XTbIVPjYaWDxZGh7sYu4Bsa6Jyqh2bgIqzmxw30ukQuyVA9mExuvSBDdP3/xCvVWcI/GHdVorr2lDNZP3YgGtBWL2qum07MD6DYXUZyvtZwUigo2TEhUEDbn4MIxyMyZ3JVT2gyo8n2R4nCC1An53y2YW8Skt5ZguWksYtsgI8tq2pMlln1jUtExUn7j9tDtyYtBX/Qq8YydEt34NJ1ZGrrnLLiB8Ri9slwhzbK0rNipajtGGViOeBn2Dd0NtE2hMyk1zTQ1QxE9dm5qmhOeN1xnH6ygbk/ai84YdenN2+sIBynsADbtJrHM4MOMKHYtaFlaBQNZdfit2wFSOiTqbSBPftOzNLaPLqArMGikNckgRb7+OG4iKbKEoIlfauvU3UdDfX+OKSiBpddb8GIKdSINkSs3jZmmZ/QHjrNh600sRrG8mqnOKn4z1MEFESIGHCAfn0zDB91oPsQkCIdjSKYumopNcDOxm0TKvjUrDvjIt1kDyYelZ3sDPJliZ6sDxJFIGGzWOqp0ubUfk9gKek8TohFuSNyXZH9guREvfdnoL51h7SRaQNO2m3CxH0reQw1YsGFZTUfZEZG/QBojnpSB87FuOp3uMkYzet82t98toUYXVMgYnUPDjrXnBz1tEDXPTVnkyb+5IyjiSEgbJQMOh/wilmedDhy0daPvTkHv2sNauwReA1/4tXdiczeMeGPUxIIXD+oJbQ3DWm/b0mugxe8u0LFHZBlaI3r9GTVGG2o6jmozkQQ/7YuVxgHHUGgP2I5MhNNOVBeiGaiRUxe5VSdjrVPPXwsVYLJqY6GIj75uRKpC+NTXnaXiC9pAcLDOufWvBiEPhOgJvKCyCBeksEMWKrCpPaCvm/t5llSF6y1smDiWaMBSEhuMxM2HtzgU7l7UZ1/emosaXBdioUEIInkYckgC0ufO5kq8ds+2We7rOUvcDgMs9p21eNh+Cs5y00j00yXo6cy3D9cHgo0yrLjdVUC4ugjwfPUGXWWCT0yIGvtlZvNgXWiM2TIncqEaqg1ZsM+WgrF5Dmnb7JWZLYDOQjT1WLoInKCRKOdAweaSSzlBUtSzW+Gbr7eEgHYh1vQs10BvLLH3REcqTtGYgjY3cpEedDsc9f0Wslx3Bm91HhPkAhYGJjTtkzR2nMWAZGzb5BUksmTcDocPe+YnifDMGUxwIKRXQm08QMruAfvFy7ZliLMSqRWnw/e8A6lFign6doDoaCKaDVNTZCojteIQhDd73YH0WH1McJ0jSpDonLo/IbC/ItTB3dA1YNY6AAI1CCEIb/ZYhDrIEGJY0a91BotJhqg/K2YPcX6D5p4xAWvtPtd0IkXhzb6fZ3qAw9w4O6INpLA2S7R3En4lgnD4sB85BzGQxAlsA2aXYvHp5KcvVsPlcrha4ER0UxdkKRKjOtKB76ADcWbJCiLLxHEOEDnTapPVtafhatBGGKyGZLV62R6zDTVo9jX199GBWNtbEOfKEpOsjcjMyT5yesghtmZMu79Ad57aXi6qiSzvvT9R2MMJwFuUDJKjdTGzddWuLpzEhYwbvGZG4uHwYvBeOhCfRzNHnTieg/nEDN9fBXVrhQbrGOLE1303Yhjwz+30yX6m6Livk3t904dNsH/B3iCQ3dodLXprkCtBcfb8rfWw4QaW1wfOwe8YMZevHYqakxz01jWPhzLylMw49Ih36E5RXcPB+703RDHy4IFL+SG2i1LOQLM/GC6nMy/3GWcR7UPuXSRagOkE2JwNbx6WC/8+TkOjmwgG7vMk8WBvMkeC0aIrSoZGdwo8SJtFhI2Ht7Q97PcwDdlpqiafxyxupTDFVDUaf3t6BwRroOHWVkxlnnByR953SH3jGCe8vjmK7nKLIW+FYA6wIec1u/Epo7Ev+YVh8E6x0uXMXnbwjC5vyfMIWvu67CLA9QR1eTfEE1vglHNJ3dV51CbvwVr7PvAinBIYwSfpjrs2DIfvQMYgj97rKpHEA0dwCPr8LbqiEfOHdN8YLaASJdYFt1YxA5AbwF705p1MQeQsuVKf3yKB3HUuSNMANttsRzWkvngHQUMMuvMd2u5kGzaRkcIlYcBVW9e1yfDpdtphdjlc41TTN0WXJp0Z0JoN2pMmctgHQrqFiTvZMcTptfcyQrE/wVLUDC8IyvUfua75AKd7vy7hIer4CSXehxnjIBkjRc3fge13oeUJSoqlM8M7mYQesiY9YL4XEYNxLqSj4xCo0bQm7cFwfoGAT1mbWA1xuwhc7GMCXhCyoE8zZnTY6JPF6/lqMZtgdNoDcmLcsm3RyBvygN+Bp8RQd39eXNfxYR7z9rhpsIOdSPTeaPYHD3g3kLOpCXmIOz/Wb5sokLV6aA/ATdtWHzaHB25jgpzilQ01vb/eSedvjzKw9MYDmCkOJONJIo6dCzDEG3v2O7nCjztgGlFnlnkcm3D+XowYhgK4iBvcNpAEfdsDHTZCDSyteD1or/ZkL+uawEsUbVsPOTcQLxFaJAC8J1s910Q6h5eZVhN8ZqdguhjOGRamNXNOvnkH4ewgJHL4CGvwcTAb203T/XE6jZxpOyWeYu/0HdkvASjlRj05/kS4fWi9K90ejkQpk29VqqcI1Uouny29rlT5Xx7fR8I1+8ldAAAAAElFTkSuQmCC"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Jeremy"], ["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (2.7ms)[0m  [1m[33mUPDATE "users" SET "image_url" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["image_url", "data:image/png;base64,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"], ["updated_at", "2018-03-14 13:53:17.795005"], ["id", 3]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:53:19 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:53:19 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:53:19 -0400
+Processing by PostsController#myposts as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 1.0ms)
+
+
+Completed 200 OK in 7ms (Views: 2.5ms | ActiveRecord: 2.0ms)
+
+
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:53:19 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/" for 127.0.0.1 at 2018-03-14 09:55:17 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"username"=>"Thomas313", "password"=>"[FILTERED]", "user"=>{"username"=>"Thomas313"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Thomas313"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "Thomas313"], ["password_digest", "$2a$10$QAntNEzQP8JwV4WNvgYra.X39NkH95Kcqbo9iWZQ19bcPFj/mEEs2"], ["created_at", "2018-03-14 13:55:17.822285"], ["updated_at", "2018-03-14 13:55:17.822285"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 76ms (Views: 0.2ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2018-03-14 09:57:42 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"description"=>"Looking to trade my Wade Boggs baseball card. It's still in mint condition.", "image_url"=>"https://bapple2286.files.wordpress.com/2010/09/boggs-87t.jpg"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "posts" ("description", "image_url", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Looking to trade my Wade Boggs baseball card. It's still in mint condition."], ["image_url", "https://bapple2286.files.wordpress.com/2010/09/boggs-87t.jpg"], ["user_id", 4], ["created_at", "2018-03-14 13:57:42.678192"], ["updated_at", "2018-03-14 13:57:42.678192"]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 9ms (Views: 0.3ms | ActiveRecord: 6.2ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/posts_controller.rb:16:in `create'
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:57:45 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:57:45 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:57:45 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
+Completed 200 OK in 7ms (Views: 2.5ms | ActiveRecord: 2.4ms)
+
+
+Completed 200 OK in 7ms (Views: 3.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:57:45 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:59:45 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:59:45 -0400
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:59:45 -0400
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:59:45 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started PUT "/users/4" for 127.0.0.1 at 2018-03-14 09:59:52 -0400
+Processing by UsersController#update as HTML
+  Parameters: {"image_url"=>"https://heatherchristenaschmidt.files.wordpress.com/2011/06/apple-mac.jpg", "id"=>"4", "user"=>{"image_url"=>"https://heatherchristenaschmidt.files.wordpress.com/2011/06/apple-mac.jpg"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "Thomas313"], ["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "image_url" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["image_url", "https://heatherchristenaschmidt.files.wordpress.com/2011/06/apple-mac.jpg"], ["updated_at", "2018-03-14 13:59:52.794458"], ["id", 4]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 09:59:57 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 09:59:57 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 09:59:57 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 2.2ms)
+
+
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 09:59:57 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 10:27:35 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 10:27:35 -0400
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 10:27:35 -0400
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mPost Load (2.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 13ms (Views: 2.1ms | ActiveRecord: 5.4ms)
+
+
+  [1m[36mPost Load (5.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 13ms (Views: 1.4ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 10:27:35 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 10:44:45 -0400
+Processing by PostsController#myposts as HTML
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 10:44:45 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 10:44:45 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (5.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 11ms (Views: 1.7ms | ActiveRecord: 5.5ms)
+
+
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mPost Load (8.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 14ms (Views: 1.8ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 10:44:45 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bottles" for 127.0.0.1 at 2018-03-14 10:55:41 -0400
+Processing by BottlesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:01:44 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:01:44 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:01:44 -0400
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 1.0ms | ActiveRecord: 2.8ms)
+
+
+  [1m[36mPost Load (2.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 17ms (Views: 3.2ms | ActiveRecord: 3.4ms)
+
+
+  [1m[36mUser Load (8.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (4.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 21ms (Views: 1.7ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:01:45 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:12:09 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:12:09 -0400
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:12:09 -0400
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mPost Load (3.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 19ms (Views: 2.0ms | ActiveRecord: 4.6ms)
+
+
+  [1m[36mPost Load (4.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 17ms (Views: 1.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:12:09 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:12:17 -0400
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:12:17 -0400
+Processing by UsersController#current as HTML
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:12:17 -0400
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+
+
+Processing by PostsController#index as HTML
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (3.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:12:17 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:14:34 -0400
+Processing by PostsController#index as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:14:34 -0400
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:14:34 -0400
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 1.5ms)
+
+
+Processing by PostsController#myposts as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.9ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:14:34 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:14:46 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:14:46 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:14:46 -0400
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:14:46 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:19:41 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:19:41 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:19:41 -0400
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 2.5ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 2.1ms)
+
+
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:19:41 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:20:28 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:20:28 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:20:28 -0400
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Processing by PostsController#myposts as HTML
+Completed 200 OK in 9ms (Views: 1.9ms | ActiveRecord: 4.9ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 3ms (Views: 1.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:20:28 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:23:24 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:23:24 -0400
+Processing by PostsController#myposts as HTML
+Processing by PostsController#index as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:23:24 -0400
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 8ms (Views: 1.1ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 16ms (Views: 1.5ms | ActiveRecord: 4.9ms)
+
+
+  [1m[36mPost Load (3.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 18ms (Views: 1.9ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:23:24 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:25:03 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:25:03 -0400
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:25:03 -0400
+Processing by PostsController#myposts as HTML
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Processing by UsersController#current as HTML
+Completed 200 OK in 8ms (Views: 2.2ms | ActiveRecord: 2.8ms)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+
+
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:25:03 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:25:11 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:25:11 -0400
+Processing by PostsController#index as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:25:11 -0400
+Processing by PostsController#myposts as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:25:12 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:25:30 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:25:30 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:25:30 -0400
+Processing by PostsController#myposts as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 7ms (Views: 2.4ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 3.5ms)
+
+
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 9ms (Views: 1.3ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:25:30 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 20ms (Views: 8.2ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:26:34 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:26:34 -0400
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:26:34 -0400
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Processing by UsersController#current as HTML
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 0.8ms)
+
+
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 2.6ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:26:34 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:27:45 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:27:45 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:27:45 -0400
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:27:45 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:30:09 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:30:09 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:30:09 -0400
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 1.3ms)
+
+
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:30:09 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:30:13 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:30:13 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:30:13 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 1.6ms)
+
+
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:30:13 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:30:51 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:30:51 -0400
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:30:51 -0400
+  [1m[36mPost Load (2.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+Completed 200 OK in 8ms (Views: 2.8ms | ActiveRecord: 3.1ms)
+
+
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:30:51 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:31:04 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:31:04 -0400
+Processing by PostsController#index as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:31:04 -0400
+Processing by PostsController#myposts as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 2.2ms)
+
+
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:31:04 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:31:12 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:31:12 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:31:12 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 7ms (Views: 3.1ms | ActiveRecord: 1.8ms)
+
+
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:31:12 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:31:58 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:31:58 -0400
+Processing by PostsController#myposts as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:31:58 -0400
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 1.4ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:31:58 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:32:18 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:32:18 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:32:18 -0400
+Processing by PostsController#myposts as HTML
+Processing by PostsController#index as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 1.0ms)
+
+
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 1.5ms)
+
+
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:32:18 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2018-03-14 11:33:14 -0400
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"Jeremy", "password"=>"[FILTERED]", "user"=>{"username"=>"Jeremy"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Jeremy"], ["LIMIT", 1]]
+Completed 200 OK in 73ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:34:26 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 4ms (Views: 1.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:34:26 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:34:26 -0400
+Processing by UsersController#current as HTML
+Processing by PostsController#myposts as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 1.3ms)
+
+
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 11ms (Views: 1.9ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:34:27 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:37:42 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:37:42 -0400
+Processing by PostsController#myposts as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:37:42 -0400
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 1.9ms)
+
+
+Processing by UsersController#current as HTML
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:37:42 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:38:00 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:38:00 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:38:00 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mPost Load (3.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 8ms (Views: 1.9ms | ActiveRecord: 3.5ms)
+
+
+  [1m[36mPost Load (2.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 9ms (Views: 1.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:38:00 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:38:28 -0400
+Processing by PostsController#index as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:38:28 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:38:28 -0400
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+Processing by PostsController#myposts as HTML
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 1.7ms)
+
+
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 6ms (Views: 1.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:38:28 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:38:49 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:38:49 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:38:49 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 1.2ms)
+
+
+Completed 200 OK in 7ms (Views: 2.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:38:49 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:41:48 -0400
+Processing by PostsController#myposts as HTML
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:41:48 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:41:48 -0400
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 1.0ms)
+
+
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mPost Load (2.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 8ms (Views: 2.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:41:48 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:48:38 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:48:38 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:48:38 -0400
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 1.2ms)
+
+
+Completed 200 OK in 8ms (Views: 3.5ms | ActiveRecord: 2.1ms)
+
+
+  [1m[36mPost Load (6.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 12ms (Views: 1.9ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:48:38 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:49:21 -0400
+Processing by PostsController#index as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:49:21 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:49:21 -0400
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mPost Load (2.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 8ms (Views: 1.7ms | ActiveRecord: 3.2ms)
+
+
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:49:21 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:52:36 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:52:36 -0400
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Processing by PostsController#myposts as HTML
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:52:36 -0400
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.9ms)
+
+
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 6ms (Views: 1.2ms | ActiveRecord: 2.3ms)
+
+
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:52:36 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:54:03 -0400
+Processing by PostsController#index as HTML
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:54:03 -0400
+Processing by PostsController#myposts as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:54:03 -0400
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 1.2ms)
+
+
+Processing by UsersController#current as HTML
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 7ms (Views: 1.6ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:54:03 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 11:54:53 -0400
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 11:54:53 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 11:54:53 -0400
+Processing by PostsController#index as HTML
+Processing by PostsController#myposts as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.5ms)
+
+
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mPost Load (2.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 9ms (Views: 2.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 11:54:53 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2018-03-14 12:33:43 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+  Parameters: {"username"=>"Jeremy", "password"=>"[FILTERED]", "user"=>{"username"=>"Jeremy"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Jeremy"], ["LIMIT", 1]]
+Completed 200 OK in 71ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/myposts" for 127.0.0.1 at 2018-03-14 12:34:18 -0400
+Started GET "/posts" for 127.0.0.1 at 2018-03-14 12:34:18 -0400
+Started GET "/current" for 127.0.0.1 at 2018-03-14 12:34:18 -0400
+Processing by PostsController#myposts as HTML
+Processing by PostsController#index as HTML
+Processing by UsersController#current as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 3]]
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 1.9ms)
+
+
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 200 OK in 9ms (Views: 2.3ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-03-14 12:34:18 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.4ms)
+
+
