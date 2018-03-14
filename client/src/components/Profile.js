@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import EditProfile from "./EditProfile";
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 
 export default class Profile extends Component {
@@ -30,6 +32,8 @@ render() {
     if (this.state.editing) {
       checkEditProfile = (
         <EditProfile
+          image={this.props.image}
+          id={this.props.id}
         />
       );
     }
@@ -49,7 +53,8 @@ render() {
 
     return (
       <div>
-        <h1>Profile of: {this.props.current_user} </h1>
+        <img className= "profpageimg" src= {this.props.image} />
+        <h1>{this.props.current_user}, you can edit your avatar or posts below </h1>
         <button className="edit-profile-button" onClick={this.editProfile}>
               Edit Profile
             </button>

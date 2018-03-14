@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180309151020) do
     t.string "username"
     t.string "session_token"
     t.string "password_digest"
+    t.string "image_url", default: "https://www.standardmedia.co.ke/evewoman/assets/img/avatar.jpg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["session_token"], name: "index_users_on_session_token"

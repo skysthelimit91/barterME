@@ -205,9 +205,14 @@ class App extends Component {
 
     // whatever
     }).then(response => {
-      const current_user = response.data
+      const current_user = response.data.username
+      const image = response.data.image_url
+      const id = response.data.id
       console.log("current user:", current_user)
-      this.setState({current_user: current_user});
+      this.setState({current_user: current_user,
+        image_url: image,
+        id: id
+      });
     })
   }
 
@@ -242,7 +247,7 @@ class App extends Component {
           <ItemsAvailable {...props} usersData= {this.state.usersData} gather={this.state.postsData}/>
           )} />
           <Route exact path="/profile" component={(props) => (
-          <Profile {...props} selectedUsersData= {this.state.selectedUsersData} current_user={this.state.current_user} />
+          <Profile {...props} selectedUsersData= {this.state.selectedUsersData} current_user={this.state.current_user} image={this.state.image_url} id={this.state.id}/>
           )} />
           </Switch>
         </BrowserRouter>

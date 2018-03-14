@@ -13,6 +13,8 @@ class UsersController < ApplicationController
   def create
     username = params[:username]
     password = params[:password]
+    image_url = params[:image_url]
+
 
     new_user = User.create({
       password: password,
@@ -40,9 +42,18 @@ class UsersController < ApplicationController
   end
 
   def current
-    user = current_user.username
+    user = current_user
     render json: user
   end
+
+  def update
+    user = current_user
+    if user.update(update_params)
+      render json: 'User pic updated!'
+    else
+      render json: 'Failed to edit pic'
+  end
+end
 
   def login
     username = params[:username]
@@ -55,4 +66,8 @@ class UsersController < ApplicationController
       render json: {user: user, token: gen_token(user.id)}
     end
   end
+  def update_params
+    params.require(:user).permit(:image_url)
+  end
 end
+

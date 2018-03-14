@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import PostForm from "./PostForm";
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 export default class ItemsAvailable extends Component {
   constructor(props) {
@@ -32,6 +34,7 @@ export default class ItemsAvailable extends Component {
 
     return (
       <div key={postData.id}>
+        <img className = "profileavy" src={userData.image_url} />
         <h2>{userData.username}</h2>
         <p>{postData.description}</p>
         <img className="postimg" src={postData.image_url} />

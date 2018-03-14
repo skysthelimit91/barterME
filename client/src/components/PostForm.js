@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import TokenService from '../services/TokenService';
-
+import { Link } from "react-router-dom";import TokenService from '../services/TokenService';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
 
 
@@ -23,7 +23,8 @@ handleChange(event) {
     const key = event.target.name;
     const value = event.target.value;
     this.setState({
-      [key]: value
+      [key]: value 
+
     });
   }
 
@@ -60,6 +61,7 @@ handleChange(event) {
 
 
 render() {
+
     return (
       <div className="make-posts-form-div">
         <form onSubmit={this.handleSubmit}>

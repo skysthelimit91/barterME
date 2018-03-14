@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class UserForm extends Component {
   constructor(props) {
@@ -6,8 +6,8 @@ export default class UserForm extends Component {
 
     // set initial state
     this.state = {
-      username: '',
-      password: ''
+      username: "",
+      password: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -22,7 +22,7 @@ export default class UserForm extends Component {
 
   // update form state
   handleChange(e) {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     this.setState({
       [name]: value
     });
@@ -31,21 +31,27 @@ export default class UserForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>Name
-          <input 
-            type="text" 
-            name="username" 
+        <label>
+          Name
+          <input
+            type="text"
+            name="username"
             onChange={this.handleChange}
-            value={this.state.username} />
+            value={this.state.username}
+          />
         </label>
-        <label>Password
-          <input 
-            type="password" 
-            name="password" 
+        <label>
+          Password
+          <input
+            type="password"
+            name="password"
             onChange={this.handleChange}
-            value={this.state.password} />
+            value={this.state.password}
+          />
         </label>
-        <button type="submit" value="Submit">Submit</button>
+        <button type="submit" value="Submit">
+          Submit
+        </button>
       </form>
     );
   }
