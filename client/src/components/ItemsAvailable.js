@@ -3,20 +3,24 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import PostForm from "./PostForm";
 import MessageForm from "./MessageForm";
+import TokenService from "../services/TokenService";
 
-import Moment from 'react-moment';
-import 'moment-timezone';
+import Moment from "react-moment";
+import "moment-timezone";
 
 export default class ItemsAvailable extends Component {
   constructor(props) {
     super(props);
     this.state = {
       posting: false,
-      messaging: false
+      messaging: false,
+      sender_id: this.props.id
     };
     this.makePost = this.makePost.bind(this);
     this.renderPost = this.renderPost.bind(this);
     this.makeMessage = this.makeMessage.bind(this);
+    this.createConversation = this.createConversation.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   makePost() {
@@ -26,10 +30,40 @@ export default class ItemsAvailable extends Component {
     });
   }
 
-  makeMessage(){
+  makeMessage() {
     this.setState(prevState => {
       const nextState = { ...prevState, messaging: !prevState.messaging };
       return nextState;
+    });
+  }
+
+  handleClick(event) {
+    const key = event.target.name;
+    const value = event.target.value;
+    this.setState({
+      [key]: value 
+
+    });
+  }
+
+  createConversation(e) {
+    const data = {
+    
+        sender_id: this.state.sender_id,
+        recipient_id: this.state.recipient_id
+        
+    };
+    console.log("conversation created", data);
+    e.preventDefault();
+    axios("http://localhost:3000/conversations", {
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${TokenService.read()}`
+      },
+      method: "POST",
+      data
+    }).then(response => {
+      console.log("POST successful, response.data:", response.data);
     });
   }
 
@@ -45,19 +79,32 @@ export default class ItemsAvailable extends Component {
 
     let checkMakeMessage = null;
     if (this.state.messaging) {
-      checkMakeMessage = <MessageForm userData={this.props.usersData}
-      id={document.getElementById('messageme').getAttribute('data-user-id')}
-       />;
+      checkMakeMessage = (
+        <MessageForm
+          userData={this.props.usersData}
+          id={document
+            .getElementById("messageme")
+            .getAttribute("data-recipient-id")}
+        />
+      );
     }
 
     return (
       <div key={postData.id}>
-        <img className = "profileavy" src={userData.image_url} />
+        <button data-me={this.props.id}>ME</button>
+        <img className="profileavy" src={userData.image_url} />
         <h2>{userData.username}</h2>
         <p>{postData.description}</p>
         <img className="postimg" src={postData.image_url} />
-        <br/>
-        <button id="messageme" data-user-id={userData.id} onClick={this.makeMessage}>Click here to message {userData.username} about this post</button>
+        <br />
+        <button
+          id="messageme"
+          name="recipient_id"
+          data-recipient-id={userData.id}
+          onClick={(this.makeMessage, this.handleClick, this.createConversation)}
+        >
+          Click here to message {userData.username} about this post
+        </button>
         {checkMakeMessage}
       </div>
     );
@@ -66,13 +113,12 @@ export default class ItemsAvailable extends Component {
   render() {
     let checkMakePost = null;
     if (this.state.posting) {
-      checkMakePost = <PostForm gather={this.props.gather}
-       />;
+      checkMakePost = <PostForm gather={this.props.gather} />;
     }
 
     let postsItems = null;
-    if (this.props.gather){
-      postsItems = this.props.gather.map(this.renderPost)
+    if (this.props.gather) {
+      postsItems = this.props.gather.map(this.renderPost);
     }
 
     return (
@@ -85,8 +131,7 @@ export default class ItemsAvailable extends Component {
         <br />
         {/*this.props.gather*/}
         {postsItems}
-        <br/>
-
+        <br />
 
         <Link to="/">
           <button>Back Home</button>

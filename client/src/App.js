@@ -246,7 +246,7 @@ class App extends Component {
             <Login {...props} submit={this.login.bind(this)} />
           )} />
           <Route exact path="/itemsavailable" component={(props) => (
-          <ItemsAvailable {...props} usersData= {this.state.usersData} gather={this.state.postsData}/>
+          <ItemsAvailable {...props} usersData= {this.state.usersData} gather={this.state.postsData} id={this.state.id}/>
           )} />
           <Route exact path="/profile" component={(props) => (
           <Profile {...props} selectedUsersData= {this.state.selectedUsersData} current_user={this.state.current_user} image={this.state.image_url} id={this.state.id}/>

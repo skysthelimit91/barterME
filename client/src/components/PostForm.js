@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from "react-router-dom";import TokenService from '../services/TokenService';
+import { Link } from "react-router-dom";
+import TokenService from '../services/TokenService';
 import Moment from 'react-moment';
 import 'moment-timezone';
 
@@ -75,7 +76,7 @@ render() {
             type="text"
             name="description"
             onChange={this.handleChange}
-            
+
           />
           <br />
           <label>{'Enter image address for your post picture here'}</label>
