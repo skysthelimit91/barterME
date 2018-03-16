@@ -184,6 +184,7 @@ export default class ItemsAvailable extends Component {
       <div>
         <NavBar />
         <header>
+        <img id = "itemslogo" src="https://i.imgur.com/aKuHJP6.jpg?1" />
         <h2>Items currently available for barter</h2>
         <button className="post-button" onClick={this.makePost}>
           Post an item of your own!

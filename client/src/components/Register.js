@@ -28,6 +28,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
+        <img id = "logopic" src="https://i.imgur.com/aKuHJP6.jpg?1" />
         <h2 className="logintext">Register here:</h2>
         <form className="login" onSubmit={this.handleSubmit}>
           <label>

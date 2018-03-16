@@ -7,6 +7,7 @@ import Moment from 'react-moment';
 import 'moment-timezone';
 import TokenService from '../services/TokenService';
 import NavBar from './NavBar';
+const conversationHelper = require ("../services/ConversationHelper.js")
 
 
 
@@ -24,6 +25,7 @@ export default class Profile extends Component {
     this.editProfile = this.editProfile.bind(this);
     this.deletePost = this.deletePost.bind(this);
     this.editPost = this.editPost.bind(this);
+    this.renderMessage = this.renderMessage.bind(this);
 
   }
 
@@ -59,7 +61,30 @@ deletePost(e){
 
 }
 
+renderMessage(messageData){
+let convosData = null;
+    if (this.props.convosData) {
+      convosData = this.props.convosData.find(
+        conversation => conversation.id === messageData.conversation_id
+      );
+    } else {
+      return <p>LOADING</p>;
+    }
+     return (
+      <div className="messagediv">
+        <h3>{messageData.description}</h3>
+      </div>
+    );
+}
+
 render() {
+
+  let messagesItems = null;
+    if (this.props.messagesData) {
+      messagesItems = this.props.messagesData.map(this.renderMessage);
+    }
+
+
     let checkEditProfile = null;
     if (this.state.editing) {
       checkEditProfile = (
@@ -96,22 +121,23 @@ render() {
       })
     }
 
-    let convoItems = null;
-      if (this.props.convosData){
+   //  let convoItems = null;
+   //    if (this.props.convosData){
         
-     convoItems = this.props.convosData.map(x => {
+   //   convoItems = this.props.convosData.map(x => {
+   //    if (x.sender_id === this.props.id || x.recipient_id === this.props.id){
+   //    return (
+   //      <div key={x.id}>
+   //      <p>
+   //      {x.id}
+   //      </p>
+   //      </div>
+   //      )
 
-      return (
-
-        <div key={x.id}>
-        <p>
-        {x.id}
-        </p>
-        </div>
-        )
-
-     })
-   }
+   //   }
+   // })
+   // }
+   
 
         
     
@@ -121,6 +147,7 @@ render() {
       <div>
         <NavBar />
         <img className= "profpageimg" src= {this.props.image} />
+      {/*<img id = "profilelogo" src="https://i.imgur.com/aKuHJP6.jpg?1" />*/}
         <h3>{this.props.current_user}</h3>
         <button className="edit-profile-button" onClick={this.editProfile}>
               Edit avatar
@@ -128,7 +155,8 @@ render() {
             {checkEditProfile}
         <br/>
         {postsItems}
-        {convoItems} 
+        {/*convoItems*/} 
+        {messagesItems}
      </div>
     )
   }

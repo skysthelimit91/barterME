@@ -278,7 +278,7 @@ class App extends Component {
           <ItemsAvailable {...props} usersData= {this.state.usersData} gather={this.state.postsData} id={this.state.id}/>
           )} />
           <Route exact path="/profile" component={(props) => (
-          <Profile {...props} selectedUsersData= {this.state.selectedUsersData} current_user={this.state.current_user} image={this.state.image_url} id={this.state.id} convosData={this.state.convosData}/>
+          <Profile {...props} selectedUsersData= {this.state.selectedUsersData} current_user={this.state.current_user} image={this.state.image_url} id={this.state.id} convosData={this.state.convosData} messagesData={this.state.messagesData}/>
           )} />
           </Switch>
         </BrowserRouter>
