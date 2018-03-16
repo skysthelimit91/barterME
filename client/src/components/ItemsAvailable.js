@@ -152,7 +152,7 @@ export default class ItemsAvailable extends Component {
           onSubmit={this.handleSubmit}
         >
           <br />
-          <label>Write your message to {userData.username} here</label>
+          <label>Interested? Write your message to {userData.username} here</label>
           <br />
           <textarea
             className="message-description-text-area"
