@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import TokenService from '../services/TokenService';
 
 
 export default class MessageForm extends Component {
@@ -22,7 +23,31 @@ handleChange(event) {
     });
   }
 
+handleSubmit(e) {
+    const data = {
+      message: {
+        description: this.state.description
+            }
+      
+    };
+    console.log(
+      'you posted this',
+      data
+    );
+    e.preventDefault();
+    axios('http://localhost:3000/posts', {
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${TokenService.read()}`,
+      },
+      method: 'POST',
+      data,
 
+    }).then(response => {
+      console.log('POST successful, response.data:', response.data);
+    });
+
+  }
 
 
 
@@ -33,7 +58,7 @@ render() {
       <div className="make-messages-form-div">
         <form onSubmit={this.handleSubmit}>
           <br />
-          <label>{'Write your message to {this.props.userData.username} here'}</label>
+          <label>{'Write your message to: here'}</label>
           <br />
           <textarea
             className="message-description-text-area"

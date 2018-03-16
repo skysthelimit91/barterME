@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'isLoggedIn', :to => 'users#is_logged_in'
   get 'myposts', :to => 'posts#myposts'
   get 'current', :to => 'users#current'
+  get 'messages', :to => 'messages#index'
 
   post 'users/login', :to => 'users#login'
 

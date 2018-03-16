@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import NavBar from './NavBar';
+
 
 export default class Home extends Component {
   constructor(props) {
@@ -11,6 +13,8 @@ export default class Home extends Component {
   render() {
     return (
       <div>
+       <NavBar />
+
         <div>I'm Home</div>
         <Link to="/register"><button>Register</button></Link>
         <br />

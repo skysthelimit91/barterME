@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import PostForm from "./PostForm";
-import MessageForm from "./MessageForm";
+import NavBar from './NavBar';
+
+// import MessageForm from "./MessageForm";
 import TokenService from "../services/TokenService";
 
 import Moment from "react-moment";
@@ -15,12 +17,16 @@ export default class ItemsAvailable extends Component {
       posting: false,
       messaging: false,
       sender_id: this.props.id
+      // recipient_id: ''
     };
     this.makePost = this.makePost.bind(this);
     this.renderPost = this.renderPost.bind(this);
     this.makeMessage = this.makeMessage.bind(this);
     this.createConversation = this.createConversation.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.hideForms = this.hideForms.bind(this)
+    // this.handleClick = this.handleClick.bind(this);
   }
 
   makePost() {
@@ -30,28 +36,70 @@ export default class ItemsAvailable extends Component {
     });
   }
 
-  makeMessage() {
-    this.setState(prevState => {
-      const nextState = { ...prevState, messaging: !prevState.messaging };
-      return nextState;
-    });
+  makeMessage(e) {
+    // this.hideForms(e)
+    this.createConversation(e);
+    // this.hideForms(e)
   }
 
-  handleClick(event) {
+  handleChange(event) {
     const key = event.target.name;
     const value = event.target.value;
     this.setState({
-      [key]: value 
-
+      [key]: value
     });
   }
 
-  createConversation(e) {
+  handleSubmit(e) {
     const data = {
-    
-        sender_id: this.state.sender_id,
-        recipient_id: this.state.recipient_id
-        
+      message: {
+        description: this.state.message_description,
+        user_id: this.props.id
+            }
+      
+    };
+    console.log(
+      'you posted this',
+      data
+    );
+    e.preventDefault();
+    axios(`http://localhost:3000/conversations/${this.state.conversation.id}/messages`, {
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${TokenService.read()}`,
+      },
+      method: 'POST',
+      data,
+
+    }).then(response => {
+      console.log('POST message successful, response.data:', response.data);
+    });
+
+  }
+
+
+  // handleClick(event) {
+  //   const key = event.target.name;
+  //   const value = event.target.getAttribute('data-recipient-id');
+  //   this.setState({
+  //     [key]: value
+
+  //   });
+  // }
+
+  // hideForms(e){
+
+  //   if (e.target.getAttribute('data-postid') === document.getElementById("{postData.id}").getAttribute('data-specific-id'))
+  //   {
+  //     document.getElementById("{postData.id}").classList.remove('hideit')
+  //   }
+  // }
+
+  createConversation(e) {
+    let buttonlocale = document.getElementById("messageme");
+    const data = {
+      sender_id: this.state.sender_id,
+      recipient_id: e.target.getAttribute("data-recipient-id")
     };
     console.log("conversation created", data);
     e.preventDefault();
@@ -63,7 +111,10 @@ export default class ItemsAvailable extends Component {
       method: "POST",
       data
     }).then(response => {
-      console.log("POST successful, response.data:", response.data);
+      this.setState({
+        conversation: response.data
+      })
+      console.log("POST conversation successful, response.data:", this.state.conversation)
     });
   }
 
@@ -77,35 +128,42 @@ export default class ItemsAvailable extends Component {
       return <p>LOADING</p>;
     }
 
-    let checkMakeMessage = null;
-    if (this.state.messaging) {
-      checkMakeMessage = (
-        <MessageForm
-          userData={this.props.usersData}
-          id={document
-            .getElementById("messageme")
-            .getAttribute("data-recipient-id")}
-        />
-      );
-    }
-
     return (
-      <div key={postData.id}>
-        <button data-me={this.props.id}>ME</button>
+      <div data-postid={postData.id} id={postData.id} key={postData.id}>
+      <NavBar />
         <img className="profileavy" src={userData.image_url} />
         <h2>{userData.username}</h2>
         <p>{postData.description}</p>
         <img className="postimg" src={postData.image_url} />
         <br />
         <button
+          data-postid={postData.id}
           id="messageme"
+          className="messagebutton"
           name="recipient_id"
           data-recipient-id={userData.id}
-          onClick={(this.makeMessage, this.handleClick, this.createConversation)}
+          onClick={this.makeMessage}
         >
           Click here to message {userData.username} about this post
         </button>
-        {checkMakeMessage}
+        <form
+          data-specific-id={postData.id}
+          className="hideit"
+          id="{postData.id}"
+          onSubmit={this.handleSubmit}
+        >
+          <br />
+          <label>Write your message to {userData.username} here</label>
+          <br />
+          <textarea
+            className="message-description-text-area"
+            type="text"
+            name="message_description"
+            onChange={this.handleChange}
+          />
+          <br />
+          <input className="edit-button-submit" type="submit" value="submit" />
+        </form>
       </div>
     );
   }

@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import Moment from 'react-moment';
 import 'moment-timezone';
 import TokenService from '../services/TokenService';
+import NavBar from './NavBar';
+
 
 
 
@@ -94,6 +96,27 @@ render() {
       })
     }
 
+    let convoItems = null;
+      if (this.props.convosData){
+        
+     convoItems = this.props.convosData.map(x => {
+
+      return (
+
+        <div key={x.id}>
+        <p>
+        {x.id}
+        </p>
+        </div>
+        )
+
+     })
+   }
+
+        
+    
+    
+
     return (
       <div>
         <img className= "profpageimg" src= {this.props.image} />
@@ -104,6 +127,7 @@ render() {
             {checkEditProfile}
         <br/>
         {postsItems}
+        {convoItems}
       <Link to="/"><button>Back Home</button></Link>     
 
      </div>

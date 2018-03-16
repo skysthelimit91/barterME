@@ -18,7 +18,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      postsData: []
+      postsData: [],
     };
     console.log(this.state);
 
@@ -105,7 +105,7 @@ class App extends Component {
       console.log("Posts:", this.state.postsData)
     });
   }
-
+ 
   getPostsUserData() {
     // lets say we have a route set up to do this in one axios request
     axios('http://localhost:3000/users', {
@@ -218,12 +218,41 @@ class App extends Component {
     })
   }
 
+  getAllConvos(data){
+    axios('http://localhost:3000/conversations', {
+      headers: {
+        Authorization: `Bearer ${TokenService.read()}`,
+      },
+    }).then(response => {
+      const stuff = response.data;
+      this.setState({convosData: stuff}, this.getAllMessages);
+      console.log("Convos:", this.state.convosData)
+    });
+  }
+
+  getAllMessages(data){
+      axios('http://localhost:3000/messages', {
+      headers: {
+        Authorization: `Bearer ${TokenService.read()}`,
+      },
+    }).then(response => {
+      const stuff = response.data;
+      this.setState({messagesData: stuff});
+      console.log("Messages:", this.state.messagesData)
+    });
+
+  }
+
+
   componentDidMount() {
     console.log('app mounted');
     this.getPosts()
     this.getSingleUserPosts()
     // this.lookforusers()
     this.getCurrentUser()
+    this.getAllConvos()
+    this.getAllMessages()
+
   }
 
 
@@ -234,7 +263,6 @@ class App extends Component {
           Weird button: <button onClick={this.authClick.bind(this)}>Weird Button</button>
           Posts button: <button onClick={this.getPosts}>Posts Button</button>
           <p><button onClick={this.checkLogin.bind(this)}>Check If Logged In</button></p>
-          <p><button onClick={this.logout.bind(this)}>Logout</button></p>
         </div>
         <BrowserRouter>
           <Switch>
@@ -249,7 +277,7 @@ class App extends Component {
           <ItemsAvailable {...props} usersData= {this.state.usersData} gather={this.state.postsData} id={this.state.id}/>
           )} />
           <Route exact path="/profile" component={(props) => (
-          <Profile {...props} selectedUsersData= {this.state.selectedUsersData} current_user={this.state.current_user} image={this.state.image_url} id={this.state.id}/>
+          <Profile {...props} selectedUsersData= {this.state.selectedUsersData} current_user={this.state.current_user} image={this.state.image_url} id={this.state.id} convosData={this.state.convosData}/>
           )} />
           </Switch>
         </BrowserRouter>
