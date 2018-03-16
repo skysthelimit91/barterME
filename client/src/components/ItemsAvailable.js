@@ -129,14 +129,13 @@ export default class ItemsAvailable extends Component {
     }
 
     return (
-      <div data-postid={postData.id} id={postData.id} key={postData.id}>
-      <NavBar />
+      <div className="postdiv" data-postid={postData.id} id={postData.id} key={postData.id}>
         <img className="profileavy" src={userData.image_url} />
         <h2>{userData.username}</h2>
         <p>{postData.description}</p>
         <img className="postimg" src={postData.image_url} />
         <br />
-        <button
+        {/*<button
           data-postid={postData.id}
           id="messageme"
           className="messagebutton"
@@ -145,7 +144,7 @@ export default class ItemsAvailable extends Component {
           onClick={this.makeMessage}
         >
           Click here to message {userData.username} about this post
-        </button>
+        </button>*/}
         <form
           data-specific-id={postData.id}
           className="hideit"
@@ -159,6 +158,8 @@ export default class ItemsAvailable extends Component {
             className="message-description-text-area"
             type="text"
             name="message_description"
+            data-recipient-id={userData.id}
+            onClick={this.makeMessage}
             onChange={this.handleChange}
           />
           <br />
@@ -181,19 +182,21 @@ export default class ItemsAvailable extends Component {
 
     return (
       <div>
-        <h1>Items currently available for barter!</h1>
+        <NavBar />
+        <header>
+        <h2>Items currently available for barter</h2>
         <button className="post-button" onClick={this.makePost}>
           Post an item of your own!
         </button>
+
+        </header>
         {checkMakePost}
         <br />
         {/*this.props.gather*/}
         {postsItems}
         <br />
 
-        <Link to="/">
-          <button>Back Home</button>
-        </Link>
+    
       </div>
     );
   }

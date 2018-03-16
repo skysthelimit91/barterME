@@ -67,7 +67,7 @@ render() {
 
     return (
       <div className="make-posts-form-div">
-        <form onSubmit={this.handleSubmit}>
+        <form id = "postform" onSubmit={this.handleSubmit}>
           <br />
           <label>{'Write a description of your item here'}</label>
           <br />

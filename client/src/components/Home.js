@@ -1,27 +1,72 @@
-
 import React, { Component } from 'react';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
-import NavBar from './NavBar';
-
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      username: '',
+      password: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.submit(this.state);
+    this.props.history.push('/itemsavailable');
+  }
+  
   render() {
     return (
       <div>
-       <NavBar />
-
-        <div>I'm Home</div>
-        <Link to="/register"><button>Register</button></Link>
+        <h2 className="logintext">Login here:</h2>
+        <form
+          className="login"
+          onSubmit={this.handleSubmit}
+        >
+          <label>
+            Username:
+            <p>
+              <input
+                placeholder="Enter your username"
+                type="text"
+                name="username"
+                onChange={this.handleChange}
+                value={this.state.username}
+              />
+            </p>
+          </label>
+          <label>
+            Password:
+            <p>
+              <input
+                placeholder="Enter your password"
+                type="password"
+                name="password"
+                onChange={this.handleChange}
+                value={this.state.password}
+              />
+            </p>
+          </label>
+          <button className="homebtn" type="submit" value="Submit">
+            Submit
+          </button>
+        </form>
         <br />
-        <Link to="/login"><button>Login</button></Link>
-        <Link to="/itemsavailable"><button>Items Page</button></Link>
-        <Link to="/profile"><button>Profile</button></Link>  
+        <h3 className="registertext">
+          Don't have an account? <Link to="/register"> Register here! </Link>{' '}
+        </h3>
+        <br />
       </div>
-    )
+    );
   }
 }

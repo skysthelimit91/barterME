@@ -1,26 +1,71 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import UserForm from './UserForm';
+import { BrowserRouter, Link } from 'react-router-dom';
 
-export default class Register extends Component {
+export default class Home extends Component {
   constructor(props) {
     super(props);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.state = {
+      username: '',
+      password: ''
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  onSubmit(data) {
-    this.props.submit(data);
+  handleChange(e) {
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.submit(this.state);
+    this.props.history.push('/');
   }
 
   render() {
-    // take note how the onSubmit method is passed down to the UserForm
-    // as a prop
     return (
       <div>
-        I'm a register
-        <UserForm submit={this.onSubmit} />
-        <p><Link to="/"><button>Back Home</button></Link></p>
+        <h2 className="logintext">Register here:</h2>
+        <form className="login" onSubmit={this.handleSubmit}>
+          <label>
+            Username:
+            <p>
+              <input
+                placeholder="Enter your username"
+                type="text"
+                name="username"
+                onChange={this.handleChange}
+                value={this.state.username}
+              />
+            </p>
+          </label>
+          <br />
+          <label>
+            Password:
+            <p>
+              <input
+                placeholder="Enter your password"
+                type="password"
+                name="password"
+                onChange={this.handleChange}
+                value={this.state.password}
+              />
+            </p>
+          </label>
+          <br />
+          <button className="homebtn" type="submit" value="Submit">
+            Submit
+          </button>
+        </form>
+        <br />
+        <h3 className = "registertext">
+          Already have an account? <Link to="/"> Login here! </Link>{' '}
+        </h3>
+        <br />
       </div>
-    )
+    );
   }
 }

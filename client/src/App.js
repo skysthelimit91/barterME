@@ -209,7 +209,7 @@ class App extends Component {
       const current_user = response.data.username
       const image = response.data.image_url
       const id = response.data.id
-      console.log("current user:", current_user)
+      console.log("current user:", current_user, id)
       this.setState({current_user: current_user,
         image_url: image,
         id: id
@@ -260,13 +260,14 @@ class App extends Component {
     return (
       <div>
         <div>
-          Weird button: <button onClick={this.authClick.bind(this)}>Weird Button</button>
-          Posts button: <button onClick={this.getPosts}>Posts Button</button>
-          <p><button onClick={this.checkLogin.bind(this)}>Check If Logged In</button></p>
         </div>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" render={props => {
+
+            return <Home {...props} submit={this.login.bind(this)} /> 
+
+            }} />
             <Route exact path="/register" component={(props) => (
                 <Register {...props} submit={this.register.bind(this)} />
             )} />

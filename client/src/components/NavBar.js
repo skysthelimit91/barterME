@@ -18,13 +18,11 @@ class NavBar extends Component {
         <div>
           <h2>
           <nav className="navbar">
-            <Link to="/">Home </Link>
-            <Link to="/profile">Profile </Link>
-            <Link onClick={this.logout} to="/">
-              Logout
-            </Link>
+            <Link to="/profile">Profile</Link>
+            <Link onClick={this.logout} to="/">&nbsp;&nbsp;Logout&nbsp;&nbsp;</Link>
+            <Link to="/itemsavailable">Items</Link>
           </nav>
-          </h2>
+        </h2>
         </div>
     );
   }

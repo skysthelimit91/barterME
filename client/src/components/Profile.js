@@ -119,6 +119,7 @@ render() {
 
     return (
       <div>
+        <NavBar />
         <img className= "profpageimg" src= {this.props.image} />
         <h3>{this.props.current_user}</h3>
         <button className="edit-profile-button" onClick={this.editProfile}>
@@ -127,9 +128,7 @@ render() {
             {checkEditProfile}
         <br/>
         {postsItems}
-        {convoItems}
-      <Link to="/"><button>Back Home</button></Link>     
-
+        {convoItems} 
      </div>
     )
   }
