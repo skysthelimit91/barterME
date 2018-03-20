@@ -42,7 +42,7 @@ handleChange(event) {
       data
     );
     e.preventDefault();
-    axios('http://localhost:3000/posts', {
+    axios('/posts', {
       headers: {
         'Content-type': 'application/json',
         Authorization: `Bearer ${TokenService.read()}`,

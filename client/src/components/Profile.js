@@ -48,7 +48,7 @@ deletePost(e){
     e.preventDefault();
     const correctid = e.target.getAttribute('data-post');
     axios({
-      url: `http://localhost:3000/posts/${correctid}`,
+      url: `/posts/${correctid}`,
       headers: {
         'Content-type': 'application/json',
         Authorization: `Bearer ${TokenService.read()}`,

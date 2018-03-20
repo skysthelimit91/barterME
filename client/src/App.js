@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   register(data) {
-    axios('http://localhost:3000/users/', {
+    axios('/users', {
       method: "POST",
       data
     }).then(resp => {
@@ -44,7 +44,7 @@ class App extends Component {
   // as above, we are saving the token locally using
   // the TokenService
   login(data) {
-    axios('http://localhost:3000/users/login', {
+    axios('/users/login', {
       method: "POST",
       data
     }).then(resp => {
@@ -58,7 +58,7 @@ class App extends Component {
   // with the token retrieved from the TokenService
   authClick(ev) {
     ev.preventDefault();
-    axios('http://localhost:3000/bottles', {
+    axios('/bottles', {
       headers: {
         Authorization: `Bearer ${TokenService.read()}`,
       },
@@ -73,7 +73,7 @@ class App extends Component {
   }
 
   checkLogin() {
-    axios('http://localhost:3000/isLoggedIn', {
+    axios('/isLoggedIn', {
       headers: {
         Authorization: `Bearer ${TokenService.read()}`,
       },
@@ -82,7 +82,7 @@ class App extends Component {
   }
 
   getPosts(data){
-    axios('http://localhost:3000/posts', {
+    axios('/posts', {
       headers: {
         Authorization: `Bearer ${TokenService.read()}`,
       },
@@ -108,7 +108,7 @@ class App extends Component {
  
   getPostsUserData() {
     // lets say we have a route set up to do this in one axios request
-    axios('http://localhost:3000/users', {
+    axios('/users', {
       headers: {
         Authorization: `Bearer ${TokenService.read()}`,
       },
@@ -183,7 +183,7 @@ class App extends Component {
 
     getSingleUserPosts(data) {
     // lets say we have a route set up to do this in one axios request
-    axios('http://localhost:3000/myposts', {
+    axios('/myposts', {
       headers: {
         Authorization: `Bearer ${TokenService.read()}`,
       },
@@ -198,7 +198,7 @@ class App extends Component {
 
   getCurrentUser(data) {
     // lets say we have a route set up to do this in one axios request
-    axios('http://localhost:3000/current', {
+    axios('/current', {
       headers: {
         Authorization: `Bearer ${TokenService.read()}`,
       },
@@ -219,7 +219,7 @@ class App extends Component {
   }
 
   getAllConvos(data){
-    axios('http://localhost:3000/conversations', {
+    axios('/conversations', {
       headers: {
         Authorization: `Bearer ${TokenService.read()}`,
       },
@@ -231,7 +231,7 @@ class App extends Component {
   }
 
   getAllMessages(data){
-      axios('http://localhost:3000/messages', {
+      axios('/messages', {
       headers: {
         Authorization: `Bearer ${TokenService.read()}`,
       },

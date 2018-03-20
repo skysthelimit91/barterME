@@ -63,7 +63,7 @@ export default class ItemsAvailable extends Component {
       data
     );
     e.preventDefault();
-    axios(`http://localhost:3000/conversations/${this.state.conversation.id}/messages`, {
+    axios(`/conversations/${this.state.conversation.id}/messages`, {
       headers: {
         'Content-type': 'application/json',
         Authorization: `Bearer ${TokenService.read()}`,
@@ -103,7 +103,7 @@ export default class ItemsAvailable extends Component {
     };
     console.log("conversation created", data);
     e.preventDefault();
-    axios("http://localhost:3000/conversations", {
+    axios("/conversations", {
       headers: {
         "Content-type": "application/json",
         Authorization: `Bearer ${TokenService.read()}`

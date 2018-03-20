@@ -37,7 +37,7 @@ export default class EditPost extends Component {
     );
     e.preventDefault();
     axios({
-      url: `http://localhost:3000/posts/${this.props.id}`,
+      url: `/posts/${this.props.id}`,
       headers: {
         'Content-type': 'application/json',
         Authorization: `Bearer ${TokenService.read()}`,

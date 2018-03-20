@@ -34,7 +34,7 @@ export default class EditProfile extends Component {
     );
     e.preventDefault();
     axios({
-      url: `http://localhost:3000/users/${this.props.id}`,
+      url: `/users/${this.props.id}`,
       headers: {
         'Content-type': 'application/json',
         Authorization: `Bearer ${TokenService.read()}`,
